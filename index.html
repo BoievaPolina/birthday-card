@@ -1,91 +1,43 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>С Днем Рождения!</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f5f5f5; /* Светлый фон страницы */
-      font-family: 'Arial', sans-serif;
-    }
-
-    .card {
-      width: 600px; /* Ширина открытки */
-      height: 350px; /* Высота открытки */
-      background: white; /* Белый фон открытки */
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #333; /* Темно-серый текст для контраста */
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      border: 3px solid #e0e0e0; /* Легкая рамка */
-      background-image: url('https://www.transparenttextures.com/patterns/white-linen.png'), linear-gradient(135deg, #ffffff, #f9f9f9); /* Легкая текстура */
-      background-size: 60px 60px; /* Размер текстуры */
-      animation: slideIn 1s ease-in-out; /* Анимация для карточки */
-    }
-
-    .card .default-text, .card .hidden-text {
-      color: #333; /* Темно-серый текст */
-      transition: opacity 0.5s ease-in-out; /* Плавное появление текста */
-    }
-
-    .card .hidden-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 28px;
-      display: none;
-    }
-
-    .card.clicked .hidden-text {
-      display: block;
-      opacity: 1;
-    }
-
-    .card.clicked .default-text {
-      opacity: 0;
-    }
-
-    /* Анимация появления карточки */
-    @keyframes slideIn {
-      0% {
-        transform: translateY(-50%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытка</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('mountains.jpg'); /* Замени на имя загруженного изображения */
+            background-size: cover; /* Масштабирует изображение на весь экран */
+            background-position: center; /* Центрует изображение */
+            background-repeat: no-repeat; /* Отключает повторение фона */
+            color: white; /* Белый цвет текста для контраста с фоном */
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            width: 70%;
+            margin: 100px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Белый полупрозрачный фон */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .reveal-text {
+            display: none;
+        }
+        .card:hover .reveal-text {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-  <div class="card" onclick="revealText()">
-    <div class="default-text"> С днем рождения! Нажми, чтобы открыть! </div>
-    <div class="hidden-text"> Поздравляем! Дарим тебе ваучер на лыжную гостиницу 500 USD </div>
-  </div>
-
-  <script>
-    function revealText() {
-      const card = document.querySelector('.card');
-      card.classList.add('clicked');
-    }
-  </script>
+    <div class="card">
+        <h1>С Днём Рождения!</h1>
+        <p class="reveal-text">Желаю счастья, здоровья и исполнения всех мечт!</p>
+    </div>
 </body>
 </html>
+
 
